@@ -8,13 +8,19 @@ $(function() {
 
     function setListener() {
         var url = location.href;
-        if (url.indexOf('tbl_sql.php') !== -1) {
+        if (url.indexOf('tbl_sql.php') !== -1
+            || url.indexOf('db_sql.php') !== -1
+        ) {
             // SQLタブを選択したときにイベントを登録（繰り返し登録を防ぐため先に削除する）
             $(document).off("click", "#button_submit_query");
             $(document).on('click', '#button_submit_query', function () {
 
                 // preタグの2つ目に入力されたSQLクエリが入っている
                 var sqlTextHtmlElArr = $('#sqlquerycontainer pre');
+                if (url.indexOf('db_sql.php') !== -1) {
+                    // db_sql画面では以下のセレクタから辿る
+                    sqlTextHtmlElArr = $('#sqlquerycontainerfull pre');
+                }
                 if (sqlTextHtmlElArr.length < 2) {
                     return;
                 }
