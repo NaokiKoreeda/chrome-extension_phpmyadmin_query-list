@@ -10,7 +10,7 @@ Chrome Extension. phpMyAdmin - Query List
 
 ## 使い方
 - ソースをまるごとダウンロード
-- `manifest.json` の `content_scripts` -> `matches` に、自分のphpMyAdminのURLを記述
+- 必要があれば、 `manifest.json` の `content_scripts` -> `matches` に、自分のphpMyAdminのURLを記述
     - 例） `https://xxx.xxx.xx/*`
 - Google Chrome の `その他のツール` -> `拡張機能` を起動
 - `パッケージ化されていない拡張機能を読み込む` で、ダウンロードしたディレクトリを指定

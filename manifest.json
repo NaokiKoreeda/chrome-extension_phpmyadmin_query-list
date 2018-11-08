@@ -7,7 +7,7 @@
     ],
     "content_scripts": [
          {
-              "matches": ["[your_phpMyAdmin_url]/*"],
+              "matches": ["http://*/*", "https://*/*"],
               "js": ["js/jquery-3.2.1.min.js", "js/app.js"]
          }
     ],
